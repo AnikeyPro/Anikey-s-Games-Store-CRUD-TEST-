@@ -3,8 +3,9 @@ package ru.anikey.crudtest2.rabbitMQ;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
-
+@EnableScheduling
 public class Sender {
     @Autowired
     private RabbitTemplate template;
