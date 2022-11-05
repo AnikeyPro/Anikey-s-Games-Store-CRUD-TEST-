@@ -1,4 +1,4 @@
-package ru.anikey.crudtest2;
+package ru.anikey.crudtest2.rabbitMQ;
 
 import java.util.concurrent.TimeUnit;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Runner implements CommandLineRunner {
 
-    @Value("${tutorial.client.duration:0}")
+    @Value("${game.client.duration:0}")
     private int duration;
 
     @Autowired
@@ -22,7 +22,7 @@ public class Runner implements CommandLineRunner {
     public void run(String... arg0) throws Exception {
         System.out.println("Ready ... running for " + duration + "ms");
         Thread.sleep(duration);
-        //ctx.close();
+        ctx.close();
     }
 
 }

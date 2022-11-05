@@ -1,4 +1,4 @@
-package ru.anikey.crudtest2;
+package ru.anikey.crudtest2.rabbitMQ;
 
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;

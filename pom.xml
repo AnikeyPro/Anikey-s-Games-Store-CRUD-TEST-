@@ -11,7 +11,7 @@
     <groupId>ru.anikey</groupId>
     <artifactId>CRUDTEST2</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
     <name>CRUDTEST2</name>
     <description>CRUDTEST2</description>
     <properties>
@@ -35,6 +35,12 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>2.7.5</version>
         </dependency>
 
         <dependency>

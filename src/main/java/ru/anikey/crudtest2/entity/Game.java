@@ -5,7 +5,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "games")
 public class Game {
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
@@ -62,11 +61,13 @@ public class Game {
         this.price = price;
     }
 
-
-
     @Override
     public String toString() {
-        return "Game [id=" + id + ", title=" + title + ", developer=" + developer + ", price=" + price
-                + "]";
+        return "Game{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", developer='" + developer + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
