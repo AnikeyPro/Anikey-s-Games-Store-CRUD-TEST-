@@ -9,20 +9,23 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 public class RabbitConfig {
 
+//
+//    @Bean
+//    public CommandLineRunner tutorial() {
+//        return new Runner();
+//    }
     @Bean
     public Queue hello() {
         return new Queue("hello");
     }
 
-    @Profile("receiver")
     @Bean
     public Receiver receiver() {
         return new Receiver();
     }
 
-    @Profile("sender")
-    @Bean
-    public Sender sender() {
-        return new Sender();
-    }
+//    @Bean
+//    public Sender sender() {
+//        return new Sender(template, queue);
+//    }
 }

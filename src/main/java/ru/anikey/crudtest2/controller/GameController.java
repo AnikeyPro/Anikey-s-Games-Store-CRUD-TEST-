@@ -29,6 +29,7 @@ public class GameController {
                 gameRepository.findAll().forEach(games::add);
             } else {
                 gameRepository.findByTitleContainingIgnoreCase(keyword).forEach(games::add);
+
                 model.addAttribute("keyword", keyword);
             }
 

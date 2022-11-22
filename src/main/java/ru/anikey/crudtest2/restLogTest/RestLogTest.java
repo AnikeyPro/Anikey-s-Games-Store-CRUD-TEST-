@@ -1,23 +1,34 @@
 package ru.anikey.crudtest2.restLogTest;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.PostConstruct;
+
+@Slf4j
 @Service
 public class RestLogTest {
 
-    private static String url =  "https://public-api.wordpress.com/rest/v1.1/sites/$site/posts/1";
+    @PostConstruct
+    private void init() {
+        sendRestRequest();
+    }
 
-    private static RestTemplate restTemplate =  new RestTemplate();;
+    private final String URL = "https://public-api.wordpress.com/rest/v1.1/sites/$site/posts/1";
 
-    public static void SendRestRequest(){
+    private final RestTemplate restTemplate;
+
+    public RestLogTest(RestTemplate restTemplate) {
+        this.restTemplate = restTemplate;
+    }
+
+    public void sendRestRequest() {
         try {
-            String result = restTemplate.getForObject(url,String.class);
-            System.out.println(result);
-        }catch (Exception e){
-            System.out.println(" ОШИБКА  -  " + e.toString());
+            String result = restTemplate.getForObject(URL, String.class);
+            log.info("result = {}", result);
+        } catch (Exception e) {
+            log.error("Error", e);
         }
     }
 }
